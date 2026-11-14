@@ -4,22 +4,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fernando J. Sanchez | Political Science Researcher</title>
-  <meta name="description" content="Personal academic website of Fernando J. Sanchez, political science researcher.">
+  <meta name="description" content="Personal academic website of Fernando J. Sanchez, AxPo Postdoctoral Fellow at Sciences Po.">
   <style>
     :root {
-      --bg: #fafaf8;
-      --text: #1f2328;
-      --muted: #5b636b;
-      --accent: #1f4e79;
-      --border: #e2e2dd;
+      --bg: #fbf7f0;
+      --card: #ffffff;
+      --text: #2b2a33;
+      --muted: #6b6672;
+      --accent: #1d6b72;
+      --accent-soft: #e0efee;
+      --warm: #c8553d;
+      --border: #eadfce;
     }
     @media (prefers-color-scheme: dark) {
       :root {
-        --bg: #14171a;
-        --text: #e8e8e6;
-        --muted: #9aa3ab;
-        --accent: #7fb2e5;
-        --border: #2b3035;
+        --bg: #1b1d22;
+        --card: #23262c;
+        --text: #ece8e1;
+        --muted: #a8a39b;
+        --accent: #6cc4c9;
+        --accent-soft: #263a3d;
+        --warm: #e8876f;
+        --border: #33363d;
       }
     }
     * { box-sizing: border-box; }
@@ -29,36 +35,82 @@
       color: var(--text);
       font-family: Georgia, "Times New Roman", serif;
       line-height: 1.65;
+      border-top: 6px solid var(--accent);
     }
     header, main, footer {
-      max-width: 720px;
+      max-width: 760px;
       margin: 0 auto;
       padding: 0 20px;
     }
-    header { padding-top: 56px; padding-bottom: 24px; border-bottom: 1px solid var(--border); }
-    h1 { font-size: 2.1rem; margin: 0 0 4px; }
-    .subtitle { color: var(--muted); font-size: 1.1rem; margin: 0 0 16px; }
+    header {
+      padding-top: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+    .profile-pic {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 30%;
+      border: 4px solid var(--card);
+      box-shadow: 0 0 0 3px var(--warm), 0 6px 18px rgba(0, 0, 0, 0.15);
+      flex-shrink: 0;
+    }
+    .intro { flex: 1; min-width: 240px; }
+    h1 { font-size: 2.2rem; margin: 0 0 4px; line-height: 1.2; }
+    .subtitle { color: var(--warm); font-size: 1.1rem; margin: 0 0 16px; font-weight: bold; }
+    nav { display: flex; flex-wrap: wrap; gap: 8px; }
     nav a {
       color: var(--accent);
+      background: var(--accent-soft);
       text-decoration: none;
-      margin-right: 18px;
+      padding: 5px 14px;
+      border-radius: 999px;
       font-family: system-ui, sans-serif;
-      font-size: 0.95rem;
+      font-size: 0.9rem;
+      transition: background 0.15s, color 0.15s;
     }
-    nav a:hover { text-decoration: underline; }
-    section { padding: 28px 0 4px; }
+    nav a:hover { background: var(--accent); color: var(--bg); }
+    section { padding: 30px 0 4px; }
     h2 {
       font-family: system-ui, sans-serif;
       font-size: 1.05rem;
       text-transform: uppercase;
-      letter-spacing: 0.06em;
-      color: var(--muted);
-      margin: 0 0 12px;
+      letter-spacing: 0.08em;
+      color: var(--accent);
+      margin: 0 0 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--warm);
+      display: inline-block;
     }
     ul { padding-left: 20px; margin: 0; }
     li { margin-bottom: 8px; }
+    li::marker { color: var(--warm); }
     a { color: var(--accent); }
-    .placeholder { color: var(--muted); font-style: italic; }
+    a:hover { color: var(--warm); }
+
+    .paper {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+    .paper-title { font-weight: bold; margin: 0 0 6px; }
+    details summary {
+      cursor: pointer;
+      color: var(--warm);
+      font-family: system-ui, sans-serif;
+      font-size: 0.9rem;
+    }
+    details p { margin: 10px 0 0; color: var(--text); font-size: 0.97rem; }
+
     footer {
       padding-top: 24px;
       padding-bottom: 48px;
@@ -73,55 +125,133 @@
 <body>
 
   <header>
-    <h1>Fernando J. Sanchez</h1>
-    <p class="subtitle">Political Science Researcher</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#teaching">Teaching</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <img class="profile-pic" src="profile_pic.jpeg" alt="Portrait of Fernando J. Sanchez">
+    <div class="intro">
+      <h1>Fernando J. Sanchez</h1>
+      <p class="subtitle">AxPo Postdoctoral Fellow, Sciences Po</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section id="about">
       <h2>About</h2>
       <p>
-        I am a researcher in political science. My work focuses on
-        <span class="placeholder">[your main research topics, e.g. comparative politics, political behavior, public policy]</span>.
-        I am currently affiliated with
-        <span class="placeholder">[your university or institution]</span>.
+        I am an AxPo Postdoctoral Fellow at Sciences Po. My research, at the intersection of
+        comparative political economy and political sociology, examines, on the one hand, the
+        formation of attitudes towards inequality and redistribution, and, on the other hand, how
+        issues of conflict and political violence affect the perception of institutions and of that
+        violence itself. Prior to completing the DPhil in Sociology at the University of Oxford,
+        I earned an MSc in Economics at LSE and an MA in Social Sciences at Juan March-UC3M.
       </p>
     </section>
 
     <section id="research">
       <h2>Research</h2>
-      <p class="placeholder">Add your publications and working papers below, one entry per paper.</p>
-      <ul>
-        <li>
-          <strong>Title of your paper</strong>, Journal or working paper series, Year.
-          <a href="#">Abstract</a> · <a href="#">PDF</a> · <a href="#">Replication data</a>
-        </li>
-        <li>
-          <strong>Another paper title</strong>, Co-author(s), Year.
-          <a href="#">PDF</a>
-        </li>
-      </ul>
+
+      <div class="paper">
+        <p class="paper-title">Lady and the Tramp: Cross-class Romantic Partnerships and Attitudes towards the Economy</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Does having a partner from a different social class shape how individuals think about the
+            economy? Drawing on longitudinal data from the British Household Panel Survey, which
+            addresses concerns about selection on prior economic attitudes, and using multiple
+            estimation strategies, I find that individuals who marry or begin to cohabitate with
+            someone from a different class shift their economic attitudes to the left relative to
+            those who partner within their own class. This effect can hardly be explained by changes
+            in material conditions or by partner persuasion. The pattern is consistent with contact
+            between social classes, which may reveal existing privileges and material differences
+            between social groups. Consistent with this argument, I find no effect on political
+            attitudes unrelated to the economy. Heterogeneous analyses indicate that selection and
+            contextual effects vary by political interest, with contextual effects concentrated among
+            less politically engaged individuals.
+          </p>
+        </details>
+      </div>
+
+      <div class="paper">
+        <p class="paper-title">Hit me one more time? Civilian Victimization during Civil Wars and Attitudes towards the Police</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Building on research showing that exposure to violence creates citizens eager for
+            stability, peace, and security, I argue that civilian victimization during civil wars is
+            positively&mdash;not negatively&mdash;associated with attitudes towards the police,
+            perceived as necessary for restoring order and stability and, thus, for preventing civil
+            war recurrence. I test this theory for the cases of the Spanish and Guatemalan Civil Wars,
+            finding that citizens living today in municipalities where civilians were more victimized
+            by Francoist and Guatemalan state forces, respectively, hold more positive views of the
+            police. Analyses of attitudes towards different security forces in Spain are consistent
+            with this effect operating through institutional continuity with the perpetrator of
+            victimization. Finally, I examine repression outside a civil-war context (scope
+            condition), in Chile, and find a negative rather than a positive association, as violence
+            was unidirectional and therefore could not be perceived or presented as necessary to
+            prevent further violence.
+          </p>
+        </details>
+      </div>
+
+      <div class="paper">
+        <p class="paper-title">Mandatory Military Service and Support for Redistribution: A tale of Inter-class Contact</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Does contact between people from different social classes heighten support for policies
+            aiming to reduce inequality? Limited evidence and endogeneity issues call for further
+            investigation into the political effects of inter-class contact. I contribute to this
+            field by examining an unexplored institution in the existing literature: mandatory
+            military service. A difference-in-differences approach, focusing on Spanish cohorts close
+            to the removal of conscription and with women as the control group, reveals that men born
+            in conscripted cohorts are significantly more likely to support redistribution. I present
+            placebo tests discarding that these findings merely reflect a differing trend between
+            genders in a broader set of political attitudes. Furthermore, I rule out plausible
+            alternative explanations and present evidence of a positive relationship between
+            conscription and cross-class social networks among men.
+          </p>
+        </details>
+      </div>
+
+      <div class="paper">
+        <p class="paper-title">Goals against inequality? Football as an instrument to address the effect of national attachment on welfare attitudes</p>
+        <details>
+          <summary>Abstract</summary>
+          <p>
+            Does national attachment offer the necessary glue to promote solidarity towards
+            co-nationals and so increase support for policies in defense of the welfare state?
+            Although this argument has been developed by liberal nationalists at the theoretical
+            level, its empirical tests should be taken with caution given the endogeneity concerns
+            present in the relationship between national identification and welfare attitudes. The
+            present paper aims to overcome this problem by combining an instrumental-variable approach
+            with an unexpected event during survey design. I exploit a survey run in the middle of
+            Iceland national football team&rsquo;s landmark qualification for the World Cup in 2017 for
+            its first time in history&mdash;the smallest country ever qualifying for this tournament.
+            Taking temporal distance to the event as an instrument of national attachment, I find
+            mixed results for the causal effect of national attachment on welfare attitudes,
+            contradicting the findings of naïve OLS analyses.
+          </p>
+        </details>
+      </div>
     </section>
 
     <section id="teaching">
       <h2>Teaching</h2>
       <ul>
-        <li><span class="placeholder">[Course name, institution, semester]</span></li>
+        <li>Graduate Teaching Assistant in Causal Inference (Postgraduate level), University of Oxford</li>
+        <li>PPE Tutorials (Undergraduate level), University of Oxford</li>
       </ul>
     </section>
 
     <section id="contact">
       <h2>Contact</h2>
       <ul>
-        <li>Email: <span class="placeholder">[your academic email]</span></li>
+        <li>Email: <a href="mailto:fernando.sanchezmonforte@sciencespo.fr">fernando.sanchezmonforte@sciencespo.fr</a></li>
         <li>GitHub: <a href="https://github.com/fernandojsanchezmonf">github.com/fernandojsanchezmonf</a></li>
-        <li>CV: <a href="#">Download PDF</a></li>
       </ul>
     </section>
   </main>
